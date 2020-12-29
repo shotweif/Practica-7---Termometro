@@ -4,6 +4,7 @@
  * Correo: ktutillod@est.edu.ec
  * Tema: Termometro
 */
+
 #include "termometro1.h"
 
 #include <QApplication>
