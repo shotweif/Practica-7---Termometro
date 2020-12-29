@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Termometro1</class>
+ <widget class="QMainWindow" name="Termometro1">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>536</width>
+    <height>245</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Termometro1</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Recursos.qrc">
+    <normaloff>:/Icono</normaloff>:/Icono</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="grpFahr">
+      <property name="title">
+       <string>Fahrenheit</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLCDNumber" name="lcdFahr">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 3, 251);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDial" name="dialFahr">
+         <property name="cursor">
+          <cursorShape>OpenHandCursor</cursorShape>
+         </property>
+         <property name="minimum">
+          <number>32</number>
+         </property>
+         <property name="maximum">
+          <number>210</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="grpCent">
+      <property name="title">
+       <string>Centígrados</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLCDNumber" name="lcdCent">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 0, 4);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDial" name="dialCent">
+         <property name="cursor">
+          <cursorShape>OpenHandCursor</cursorShape>
+         </property>
+         <property name="minimum">
+          <number>-18</number>
+         </property>
+         <property name="maximum">
+          <number>99</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="sliderPosition">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QGroupBox" name="grpKelv">
+      <property name="title">
+       <string>Kelvin</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLCDNumber" name="lcdKelv">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(0, 221, 255);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDial" name="dialKelv">
+         <property name="minimum">
+          <number>273</number>
+         </property>
+         <property name="maximum">
+          <number>372</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="Recursos.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>dialCent</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdCent</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>89</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dialFahr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdFahr</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>257</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dialKelv</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdKelv</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>609</x>
+     <y>237</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>609</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
